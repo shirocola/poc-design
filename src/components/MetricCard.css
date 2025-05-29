@@ -1,14 +1,27 @@
 .metric-card {
   background: #ffffff;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e5e5;
   transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
 }
 
 .metric-card:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 .metric-card-header {
@@ -23,17 +36,20 @@
   font-weight: 500;
   color: #6b7280;
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .metric-card-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background: #f3f4f6;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .metric-value {
@@ -41,26 +57,33 @@
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .metric-change {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  width: fit-content;
 }
 
 .metric-change.positive {
   color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
 }
 
 .metric-change.negative {
   color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
 }
 
 .change-indicator {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .change-text {
