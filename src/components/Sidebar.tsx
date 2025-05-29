@@ -13,10 +13,10 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
         <ul className="sidebar-menu">
           {items.map((item) => (
             <li key={item.id} className={`sidebar-item ${item.active ? 'active' : ''}`}>
-              <a href="#" className="sidebar-link">
+              <button className="sidebar-link" onClick={() => {}}>
                 {item.icon && <span className="sidebar-icon">{item.icon}</span>}
                 <span className="sidebar-label">{item.label}</span>
-              </a>
+              </button>
             </li>
           ))}
         </ul>

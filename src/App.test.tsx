@@ -4,26 +4,26 @@ import App from './App';
 
 test('renders dashboard title', () => {
   render(<App />);
-  const dashboardElement = screen.getByText(/Dashboard Overview/i);
+  const dashboardElement = screen.getByText(/Sales YTD Dashboard/i);
   expect(dashboardElement).toBeInTheDocument();
 });
 
 test('renders metric cards', () => {
   render(<App />);
-  const revenueCard = screen.getByText(/Total Revenue/i);
-  const usersCard = screen.getByText(/Active Users/i);
-  const ordersCard = screen.getAllByText(/Orders/i)[0]; // Get the first match (metric card)
-  const conversionCard = screen.getByText(/Conversion Rate/i);
+  const revenueCard = screen.getByText(/YTD Revenue/i);
+  const salesCard = screen.getByText(/YTD Sales/i);
+  const averageOrderCard = screen.getByText(/Average Order Value/i);
+  const conversionCard = screen.getByText(/Sales Conversion/i);
   
   expect(revenueCard).toBeInTheDocument();
-  expect(usersCard).toBeInTheDocument();
-  expect(ordersCard).toBeInTheDocument();
+  expect(salesCard).toBeInTheDocument();
+  expect(averageOrderCard).toBeInTheDocument();
   expect(conversionCard).toBeInTheDocument();
 });
 
 test('renders charts', () => {
   render(<App />);
-  const monthlySalesChart = screen.getByText(/Monthly Sales/i);
+  const monthlySalesChart = screen.getByText(/Monthly Sales YTD/i);
   const quarterlyRevenueChart = screen.getByText(/Quarterly Revenue/i);
   
   expect(monthlySalesChart).toBeInTheDocument();
@@ -32,9 +32,9 @@ test('renders charts', () => {
 
 test('renders activity section', () => {
   render(<App />);
-  const activitySection = screen.getByText(/Recent Activity/i);
-  const quickStatsSection = screen.getByText(/Quick Stats/i);
+  const activitySection = screen.getByText(/Recent Sales Activity/i);
+  const salesMetricsSection = screen.getByText(/Sales Metrics/i);
   
   expect(activitySection).toBeInTheDocument();
-  expect(quickStatsSection).toBeInTheDocument();
+  expect(salesMetricsSection).toBeInTheDocument();
 });

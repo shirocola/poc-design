@@ -28,6 +28,11 @@
   text-decoration: none;
   font-weight: 500;
   transition: all 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
 }
 
 .sidebar-link:hover {
