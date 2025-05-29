@@ -1,21 +1,11 @@
 import React from 'react';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import MetricCard from './components/MetricCard';
 import Chart from './components/Chart';
-import { SidebarItem, ChartData } from './types';
+import { ChartData } from './types';
 import './App.css';
 
 const App: React.FC = () => {
-  const sidebarItems: SidebarItem[] = [
-    { id: '1', label: 'Dashboard', active: true, icon: '📊' },
-    { id: '2', label: 'Analytics', icon: '📈' },
-    { id: '3', label: 'Users', icon: '👥' },
-    { id: '4', label: 'Products', icon: '📦' },
-    { id: '5', label: 'Orders', icon: '🛒' },
-    { id: '6', label: 'Settings', icon: '⚙️' },
-  ];
-
   const chartData: ChartData[] = [
     { label: 'Jan', value: 45 },
     { label: 'Feb', value: 52 },
@@ -36,7 +26,6 @@ const App: React.FC = () => {
     <div className="app">
       <Header />
       <div className="app-layout">
-        <Sidebar items={sidebarItems} />
         <main className="main-content">
           <div className="dashboard-header">
             <h1 className="dashboard-title">Dashboard Overview</h1>
